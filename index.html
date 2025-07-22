@@ -1,25 +1,4 @@
-async function handleLogin(email, password, username = null) {
-            try {
-                setLoading(true);
-                hideError();
-
-                // Check if Firebase is properly initialized
-                if (!auth) {
-                    throw new Error('Firebase Authentication not initialized');
-                }
-
-                // Sign in with Firebase Auth
-                const userCredential = await auth.signInWithEmailAndPassword(email, password);
-                const user = userCredential.user;
-
-                // Store user data in Firestore
-                const userData = {
-                    uid: user.uid,
-                    email: user.email,
-                    username: username || email.split('@')[0],
-                    loginMethod: currentTab,
-                    lastLogin: firebase.firestore.FieldValue.serverTimestamp(),
-                    loginHistory: firebase.firestore.<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
